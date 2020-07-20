@@ -18,7 +18,7 @@ class Author
     end
 
     def total_words
-        books.map {|trait| trait.word_count}.sum
+        books.map {|book| book.word_count}.sum
     end
     
     def self.most_words
