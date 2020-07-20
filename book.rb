@@ -1,35 +1,24 @@
 class Book
-    attr_reader :title
+    attr_reader :title, :word_count
+    
+    @@all = []
 
-    def initialize(title)
+    def initialize(title, word_count)
+        @word_count = word_count
         @title = title
+        @@all << self
     end
 
     def self.all
-        BookAuthor.all.map { |book| book.title }
+        @@all
     end
 
-    def word_count
-        BookAuthor.all.map do |book| 
-            book == self
-            book.word_count
-        end
+    def book_authors
+        BookAuthor.all.select{|book_author| book_author.book == self }
     end
 
-    def title
-        BookAuthor.all.map do |book|
-            book == self
-            book.title
-        end
+    def authors 
+        self.book_authors.map { |book_author| book_author.author }
     end
-
-    def author 
-        BookAuthor.all.map do |book|
-            book.author == self
-            book.author
-        end
-    end
-
-
 end
 

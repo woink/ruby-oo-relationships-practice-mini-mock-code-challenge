@@ -6,13 +6,13 @@ There are a few things that are not written correctly here. Rather than listing 
 
 ## Updated: Take a look at the following methods
 
-- `Author.all`
-    - This should be returning a list of all of the authors that were created
+<!-- - `Author.all`
+    - This should be returning a list of all of the authors that were created -->
 
-- `author.books` returns a list of `bookauthor` instances. It should return a list of `book` instances
+<!-- - `author.books` returns a list of `bookauthor` instances. It should return a list of `book` instances
 
 - `Book.all`
-    - This should return a list of all of the `book` instances created
+    - This should return a list of all of the `book` instances created -->
 
 - `book.title`, `book.word_count`, `book.author` are all incorrectly written. `book.author` should have been refactored to `book.authors` once changed to a many to many and that method is incorrectly written for a many to many relationship as well. 
 
